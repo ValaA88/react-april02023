@@ -1,5 +1,7 @@
 import './index.css';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import AddEmployee from './components/AddEmployee';
 import Employee from './components/Employee';
 
 function App() {
@@ -54,6 +56,16 @@ function App() {
     setEmployees(updatedEmployees);
   }
 
+  function newEmployee(name, role, img) {
+    const newEmployee = {
+      id: uuidv4(),
+      name: name,
+      role: role,
+      img: img,
+    };
+    setEmployees([...employees, newEmployee]);
+  }
+
   const showEmployee = true;
   return (
     <div className="App">
@@ -79,6 +91,7 @@ function App() {
               );
             })}
           </div>
+          <AddEmployee newEmployee={newEmployee} />
         </>
       ) : (
         <p>Employee not found</p>
