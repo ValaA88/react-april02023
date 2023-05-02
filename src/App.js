@@ -7,6 +7,8 @@ import EditEmployee from './components/EditEmployee';
 import Employee from './components/Employee';
 import Header from './components/Header';
 import Customers from './pages/Customers';
+import Definition from './pages/Definition';
+import Dictionary from './pages/Dictionary';
 import Employees from './pages/Employees';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
       <Header>
         <Routes>
           <Route path="/Employees" element={<Employees />} />
+          <Route path="/Dictionary" element={<Dictionary />} />
+          <Route path="/Definition" element={<Definition />} />
           <Route path="/Customers" element={<Customers />} />
         </Routes>
       </Header>
