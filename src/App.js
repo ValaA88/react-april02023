@@ -6,6 +6,7 @@ import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/EditEmployee';
 import Employee from './components/Employee';
 import Header from './components/Header';
+import NotFound from './components/NotFound';
 import Customers from './pages/Customers';
 import Definition from './pages/Definition';
 import Dictionary from './pages/Dictionary';
@@ -16,10 +17,12 @@ function App() {
     <BrowserRouter>
       <Header>
         <Routes>
-          <Route path="/Employees" element={<Employees />} />
-          <Route path="/Dictionary" element={<Dictionary />} />
-          <Route path="/Definition" element={<Definition />} />
-          <Route path="/Customers" element={<Customers />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="dictionary/:search" element={<Definition />} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Header>
     </BrowserRouter>
